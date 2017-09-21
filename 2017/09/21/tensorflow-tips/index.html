@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="TensorFlow,Anaconda,Python," />
 
 
 
@@ -70,18 +70,19 @@
 
 
 <meta name="description" content="Python环境最佳实践Python环境推荐采用Anaconda作为Python环境，可以避免大量的兼容性问题；推荐采用python &amp;gt;= 3.5作为python的基础版本。 通常安装 TensorFlow分为两种情况：  只使用CPU：这种安装相对容易。 使用了GPU：还需安装CUDA和cuDNN。  IDEIDE推荐采用PyCharm CE，为了更好的markdown效果，安装上这2个m">
+<meta name="keywords" content="TensorFlow,Anaconda,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tensorflow 1.0.1开发环境安装 - 我的最佳实践">
-<meta property="og:url" content="http://yoursite.com/2017/09/21/tensorflow-tips/index.html">
+<meta property="og:url" content="http://blog.kyletiger.com/2017/09/21/tensorflow-tips/index.html">
 <meta property="og:site_name" content="郑立松的博客">
 <meta property="og:description" content="Python环境最佳实践Python环境推荐采用Anaconda作为Python环境，可以避免大量的兼容性问题；推荐采用python &amp;gt;= 3.5作为python的基础版本。 通常安装 TensorFlow分为两种情况：  只使用CPU：这种安装相对容易。 使用了GPU：还需安装CUDA和cuDNN。  IDEIDE推荐采用PyCharm CE，为了更好的markdown效果，安装上这2个m">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2017/09/21/tensorflow-tips/2017-05-16-18-52-09.png">
+<meta property="og:image" content="http://blog.kyletiger.com/2017/09/21/tensorflow-tips/2017-05-16-18-52-09.png">
 <meta property="og:updated_time" content="2017-09-21T13:16:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tensorflow 1.0.1开发环境安装 - 我的最佳实践">
 <meta name="twitter:description" content="Python环境最佳实践Python环境推荐采用Anaconda作为Python环境，可以避免大量的兼容性问题；推荐采用python &amp;gt;= 3.5作为python的基础版本。 通常安装 TensorFlow分为两种情况：  只使用CPU：这种安装相对容易。 使用了GPU：还需安装CUDA和cuDNN。  IDEIDE推荐采用PyCharm CE，为了更好的markdown效果，安装上这2个m">
-<meta name="twitter:image" content="http://yoursite.com/2017/09/21/tensorflow-tips/2017-05-16-18-52-09.png">
+<meta name="twitter:image" content="http://blog.kyletiger.com/2017/09/21/tensorflow-tips/2017-05-16-18-52-09.png">
 
 
 
@@ -111,7 +112,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/21/tensorflow-tips/"/>
+  <link rel="canonical" href="http://blog.kyletiger.com/2017/09/21/tensorflow-tips/"/>
 
 
 
@@ -182,6 +183,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -224,7 +235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/21/tensorflow-tips/">
+    <link itemprop="mainEntityOfPage" href="http://blog.kyletiger.com/2017/09/21/tensorflow-tips/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郑立松 (Albert Zheng)">
@@ -300,6 +311,7 @@
 <h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a><strong>IDE</strong></h2><p>IDE推荐采用PyCharm CE，为了更好的markdown效果，安装上这2个markdown插件：<code>Markdown Navigator</code>和<code>Paste images into MarkDow</code>.</p>
 <img src="/2017/09/21/tensorflow-tips/2017-05-16-18-52-09.png" alt="2017-05-16-18-52-09.png" title="">
 <h1 id="TensorFlow环境安装"><a href="#TensorFlow环境安装" class="headerlink" title="TensorFlow环境安装"></a><strong>TensorFlow环境安装</strong></h1><h2 id="采用conda创建一个隔离的python和Anaconda虚拟环境"><a href="#采用conda创建一个隔离的python和Anaconda虚拟环境" class="headerlink" title="采用conda创建一个隔离的python和Anaconda虚拟环境"></a><strong>采用conda创建一个隔离的python和Anaconda虚拟环境</strong></h2><p>我们将虚拟环境命名为tensorflow:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">➜  ~ conda create -n tensorflow python=3.6 anaconda</div><div class="line">➜  ~ <span class="built_in">source</span> activate tensorflow</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>现在应该已切换到tensorflow环境了，shell提示符应该显示出当前所在环境的名称了。</p>
 <p>检查确定各个命令的路径和版本：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">(tensorflow) ➜  ~ <span class="built_in">which</span> python</div><div class="line">/Users/albert.zheng/anaconda3/envs/tensorflow/bin/python</div><div class="line"></div><div class="line">(tensorflow) ➜  ~ <span class="built_in">which</span> conda</div><div class="line">/Users/albert.zheng/anaconda3/envs/tensorflow/bin/conda</div><div class="line"></div><div class="line">(tensorflow) ➜  ~ <span class="built_in">which</span> pip</div><div class="line">/Users/albert.zheng/anaconda3/envs/tensorflow/bin/pip</div><div class="line"></div><div class="line">(tensorflow) ➜  ~ python --version</div><div class="line">Python 3.6.0 :: Anaconda 4.3.1 (x86_64)</div><div class="line"></div><div class="line">(tensorflow) ➜  ~ conda -V</div><div class="line">conda 4.3.16</div><div class="line"></div><div class="line">(tensorflow) ➜  ~ pip --version</div><div class="line">pip 9.0.1 from /Users/albert.zheng/anaconda3/envs/tensorflow/lib/python3.6/site-packages (python 3.6)</div></pre></td></tr></table></figure>
@@ -331,7 +343,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ vi .matplotlib/matplotlibrc</div><div class="line"></div><div class="line"><span class="comment">#backend: WebAgg</span></div><div class="line">backend: Qt5Agg</div></pre></td></tr></table></figure>
 <p>如果backend配置有误，一旦import matplotlib及它下面任何module，就会报错和给出可选的配置项名称，例如如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import matplotlib</div><div class="line">/Users/albert.zheng/anaconda3/envs/tensorflow/lib/python3.6/site-packages/matplotlib/__init__.py:1120: UserWarning: Bad val <span class="string">"macos"</span> on line <span class="comment">#1</span></div><div class="line">	<span class="string">"backend: macos</span></div><div class="line"><span class="string">"</span></div><div class="line">	<span class="keyword">in</span> file <span class="string">"/Users/albert.zheng/.matplotlib/matplotlibrc"</span></div><div class="line">	Key backend: Unrecognized backend string <span class="string">"macos"</span>: valid strings are [<span class="string">'GTK'</span>, <span class="string">'GTKAgg'</span>, <span class="string">'GTKCairo'</span>, <span class="string">'MacOSX'</span>, <span class="string">'Qt4Agg'</span>, <span class="string">'Qt5Agg'</span>, <span class="string">'TkAgg'</span>, <span class="string">'WX'</span>, <span class="string">'WXAgg'</span>, <span class="string">'GTK3Cairo'</span>, <span class="string">'GTK3Agg'</span>, <span class="string">'WebAgg'</span>, <span class="string">'nbAgg'</span>, <span class="string">'agg'</span>, <span class="string">'cairo'</span>, <span class="string">'gdk'</span>, <span class="string">'pdf'</span>, <span class="string">'pgf'</span>, <span class="string">'ps'</span>, <span class="string">'svg'</span>, <span class="string">'template'</span>]</div><div class="line">  (val, error_details, msg))</div></pre></td></tr></table></figure>
-<h2 id="附录：采用conda命令来安装TensorFlow包"><a href="#附录：采用conda命令来安装TensorFlow包" class="headerlink" title="附录：采用conda命令来安装TensorFlow包"></a><strong>附录：采用conda命令来安装TensorFlow包</strong></h2><h3 id="1-非官方channel-conda-forge有osx-64-linux-64-win-64的tensorflow包，可在这个页面-https-anaconda-org-conda-forge-tensorflow-上查询到。"><a href="#1-非官方channel-conda-forge有osx-64-linux-64-win-64的tensorflow包，可在这个页面-https-anaconda-org-conda-forge-tensorflow-上查询到。" class="headerlink" title="1. 非官方channel conda-forge有osx-64, linux-64, win-64的tensorflow包，可在这个页面(https://anaconda.org/conda-forge/tensorflow)上查询到。"></a>1. 非官方channel <code>conda-forge</code>有osx-64, linux-64, win-64的tensorflow包，可在这个页面(<code>https://anaconda.org/conda-forge/tensorflow</code>)上查询到。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">➜  ~ conda search -c conda-forge tensorflow</div><div class="line">Fetching package metadata ...........</div><div class="line">tensorflow                   0.7.1                    py35_0  conda-forge</div><div class="line">...</div><div class="line">                             1.0.0                    py27_0  conda-forge</div><div class="line">                             1.0.0                    py36_0  conda-forge</div><div class="line">                             1.0.0                    py35_0  conda-forge</div></pre></td></tr></table></figure>
+<h2 id="Option：也可采用conda命令来安装TensorFlow的python包"><a href="#Option：也可采用conda命令来安装TensorFlow的python包" class="headerlink" title="Option：也可采用conda命令来安装TensorFlow的python包"></a><strong>Option：也可采用conda命令来安装TensorFlow的python包</strong></h2><h3 id="1-非官方channel-conda-forge有osx-64-linux-64-win-64的tensorflow包，可在这个页面-https-anaconda-org-conda-forge-tensorflow-上查询到。"><a href="#1-非官方channel-conda-forge有osx-64-linux-64-win-64的tensorflow包，可在这个页面-https-anaconda-org-conda-forge-tensorflow-上查询到。" class="headerlink" title="1. 非官方channel conda-forge有osx-64, linux-64, win-64的tensorflow包，可在这个页面(https://anaconda.org/conda-forge/tensorflow)上查询到。"></a>1. 非官方channel <code>conda-forge</code>有osx-64, linux-64, win-64的tensorflow包，可在这个页面(<code>https://anaconda.org/conda-forge/tensorflow</code>)上查询到。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">➜  ~ conda search -c conda-forge tensorflow</div><div class="line">Fetching package metadata ...........</div><div class="line">tensorflow                   0.7.1                    py35_0  conda-forge</div><div class="line">...</div><div class="line">                             1.0.0                    py27_0  conda-forge</div><div class="line">                             1.0.0                    py36_0  conda-forge</div><div class="line">                             1.0.0                    py35_0  conda-forge</div></pre></td></tr></table></figure>
 <p>To install this package with conda run:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conda install -c conda-forge tensorflow=1.0.0</div></pre></td></tr></table></figure></p>
 <h3 id="2-Anaconda官方channel的linux-64平台的tensorflow包可在这个页面-https-anaconda-org-anaconda-tensorflow-上查询到。"><a href="#2-Anaconda官方channel的linux-64平台的tensorflow包可在这个页面-https-anaconda-org-anaconda-tensorflow-上查询到。" class="headerlink" title="2. Anaconda官方channel的linux-64平台的tensorflow包可在这个页面(https://anaconda.org/anaconda/tensorflow)上查询到。"></a>2. Anaconda官方channel的linux-64平台的tensorflow包可在这个页面(<code>https://anaconda.org/anaconda/tensorflow</code>)上查询到。</h3><p>To install this package with conda run:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">conda install -c anaconda tensorflow=1.0.1</div></pre></td></tr></table></figure>
@@ -349,6 +361,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TensorFlow/" rel="tag"># TensorFlow</a>
+          
+            <a href="/tags/Anaconda/" rel="tag"># Anaconda</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
       
 
       
@@ -436,12 +458,41 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
 
         </nav>
 
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/albertzheng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:lisong.zheng@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/lisong.zheng" target="_blank" title="FB Page">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+              </span>
+            
           
         </div>
 
@@ -466,7 +517,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python环境最佳实践"><span class="nav-number">1.</span> <span class="nav-text">Python环境最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python环境"><span class="nav-number">1.1.</span> <span class="nav-text">Python环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE"><span class="nav-number">1.2.</span> <span class="nav-text">IDE</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow环境安装"><span class="nav-number">2.</span> <span class="nav-text">TensorFlow环境安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#采用conda创建一个隔离的python和Anaconda虚拟环境"><span class="nav-number">2.1.</span> <span class="nav-text">采用conda创建一个隔离的python和Anaconda虚拟环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装tensorflow-1-0-1的python包"><span class="nav-number">2.2.</span> <span class="nav-text">安装tensorflow 1.0.1的python包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Validate-your-installation"><span class="nav-number">2.3.</span> <span class="nav-text">Validate your installation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于SSE4-1-instructions-issue"><span class="nav-number">2.3.1.</span> <span class="nav-text">关于SSE4.1 instructions issue</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#matplotlib的backend配置"><span class="nav-number">2.4.</span> <span class="nav-text">matplotlib的backend配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-先确定配置文件是哪个？"><span class="nav-number">2.4.1.</span> <span class="nav-text">1. 先确定配置文件是哪个？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置backend"><span class="nav-number">2.4.2.</span> <span class="nav-text">2. 配置backend</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录：采用conda命令来安装TensorFlow包"><span class="nav-number">2.5.</span> <span class="nav-text">附录：采用conda命令来安装TensorFlow包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-非官方channel-conda-forge有osx-64-linux-64-win-64的tensorflow包，可在这个页面-https-anaconda-org-conda-forge-tensorflow-上查询到。"><span class="nav-number">2.5.1.</span> <span class="nav-text">1. 非官方channel conda-forge有osx-64, linux-64, win-64的tensorflow包，可在这个页面(https://anaconda.org/conda-forge/tensorflow)上查询到。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Anaconda官方channel的linux-64平台的tensorflow包可在这个页面-https-anaconda-org-anaconda-tensorflow-上查询到。"><span class="nav-number">2.5.2.</span> <span class="nav-text">2. Anaconda官方channel的linux-64平台的tensorflow包可在这个页面(https://anaconda.org/anaconda/tensorflow)上查询到。</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python环境最佳实践"><span class="nav-number">1.</span> <span class="nav-text">Python环境最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python环境"><span class="nav-number">1.1.</span> <span class="nav-text">Python环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE"><span class="nav-number">1.2.</span> <span class="nav-text">IDE</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow环境安装"><span class="nav-number">2.</span> <span class="nav-text">TensorFlow环境安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#采用conda创建一个隔离的python和Anaconda虚拟环境"><span class="nav-number">2.1.</span> <span class="nav-text">采用conda创建一个隔离的python和Anaconda虚拟环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装tensorflow-1-0-1的python包"><span class="nav-number">2.2.</span> <span class="nav-text">安装tensorflow 1.0.1的python包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Validate-your-installation"><span class="nav-number">2.3.</span> <span class="nav-text">Validate your installation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于SSE4-1-instructions-issue"><span class="nav-number">2.3.1.</span> <span class="nav-text">关于SSE4.1 instructions issue</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#matplotlib的backend配置"><span class="nav-number">2.4.</span> <span class="nav-text">matplotlib的backend配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-先确定配置文件是哪个？"><span class="nav-number">2.4.1.</span> <span class="nav-text">1. 先确定配置文件是哪个？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置backend"><span class="nav-number">2.4.2.</span> <span class="nav-text">2. 配置backend</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Option：也可采用conda命令来安装TensorFlow的python包"><span class="nav-number">2.5.</span> <span class="nav-text">Option：也可采用conda命令来安装TensorFlow的python包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-非官方channel-conda-forge有osx-64-linux-64-win-64的tensorflow包，可在这个页面-https-anaconda-org-conda-forge-tensorflow-上查询到。"><span class="nav-number">2.5.1.</span> <span class="nav-text">1. 非官方channel conda-forge有osx-64, linux-64, win-64的tensorflow包，可在这个页面(https://anaconda.org/conda-forge/tensorflow)上查询到。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Anaconda官方channel的linux-64平台的tensorflow包可在这个页面-https-anaconda-org-anaconda-tensorflow-上查询到。"><span class="nav-number">2.5.2.</span> <span class="nav-text">2. Anaconda官方channel的linux-64平台的tensorflow包可在这个页面(https://anaconda.org/anaconda/tensorflow)上查询到。</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
