@@ -94,7 +94,7 @@ header b {
 
 .panel-cell .help-text {
     color: #f8f8f8;
-    margin: 0;
+    margin-top: -0.14rem;
     padding: 0;
     text-align: center;
     color: rgba(255, 255, 255, 1);

@@ -172,7 +172,7 @@ function performPrediction() {
       let index = indices[i];
       predictionText += categoryNames[index];
       predictionText += '<span style="font-size:0.26rem;">(匹配度';
-      predictionText += (probabilities[index] * 100).toFixed(2);
+      predictionText += (probabilities[index] * 100).toFixed(1);
       predictionText += '%)</span>';
       if (i < demoTopK - 1)
         predictionText += ' > ';
