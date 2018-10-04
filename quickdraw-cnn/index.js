@@ -108,7 +108,7 @@ async function loadCategories() {
       if (i < demoMiniCategoryNumber - 1)
         category_list += '，';
     }
-    document.getElementById('status').innerHTML = '请画出如下类别之一的图像： <b><p>'+category_list+'</p></b>';
+    document.getElementById('status').innerHTML = '请画出如下类别之一的图像： <b><p style="margin:0px">'+category_list+'</p></b>';
   });
 }
 
@@ -168,7 +168,7 @@ function performPrediction() {
     for (let i = 0; i < topK; i++) {
       let index = indices[i];
       predictionText += categoryNames[index];
-      predictionText += '<span style="font-size:0.18rem;">(匹配度';
+      predictionText += '<span style="font-size:0.22rem;">(匹配度';
       predictionText += (probabilities[index]*100).toFixed(2);
       predictionText += '%)</span>';
       if (i < demoTopK - 1)

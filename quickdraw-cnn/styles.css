@@ -3,7 +3,7 @@
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 0.22rem;
+    font-size: 0.24rem;
 }
 
 body {
@@ -44,6 +44,14 @@ header b {
     text-align: left;
     color: rgba(255, 255, 255, 1);
     padding: 0 0.18rem;
+}
+
+#description-container #poc-info {
+    margin: 0.06rem;
+}
+
+#description-container #stack-info {
+    margin: 0.02rem;
 }
 
 /** Controls. **/
@@ -91,7 +99,7 @@ header b {
     text-align: center;
     /* font-weight: 300; */
     /* font-size: 0.18rem; */
-    line-height: 1.1;
+    /* line-height: 1.1; */
     top: 0;
     color: rgba(255, 255, 255, 1);
 }
@@ -112,7 +120,7 @@ header b {
     box-sizing: border-box;
     display: inline-block;
     padding: 0.09rem;
-    margin: 0.24rem;
+    margin: 0.16rem;
 }
 
 .canvas-box-inner {
@@ -143,16 +151,16 @@ header b {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 0.25rem;
-    height: 0.25rem;
+    width: 0.24rem;
+    height: 0.24rem;
     border-radius: 50%;
     background: #ef6c00;
     cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-    width: 0.25rem;
-    height: 0.25rem;
+    width: 0.24rem;
+    height: 0.24rem;
     border-radius: 50%;
     background: #ef6c00;
     cursor: pointer;
@@ -169,7 +177,7 @@ header b {
     -ms-user-select: none;
     user-select: none;
     border: 0.01rem solid transparent;
-    /* font-size: 0.18rem; */
+    font-size: 0.24rem;
     line-height: 1.5;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
