@@ -18,7 +18,7 @@ let demoMiniCategoryNumber = 10;
     docEl.dataset.dpr = dpr;
     var metaEl = doc.createElement('meta');
     metaEl.name = 'viewport';
-    metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale;
+    metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no';
     docEl.firstElementChild.appendChild(metaEl);
     var recalc = function() {
         var width = docEl.clientWidth;
@@ -108,7 +108,7 @@ async function loadCategories() {
       if (i < demoMiniCategoryNumber - 1)
         category_list += '，';
     }
-    document.getElementById('status').innerHTML = '请画出如下类别之一的图像： <b><p>'+category_list+'</p></b>';
+    document.getElementById('status').innerHTML = '请画出如下类别之一的图像： <b>'+category_list+'</b>';
   });
 }
 
