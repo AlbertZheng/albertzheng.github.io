@@ -108,7 +108,7 @@ async function loadCategories() {
       if (i < demoMiniCategoryNumber - 1)
         category_list += '，';
     }
-    document.getElementById('status').innerHTML = '请画出如下类别之一的图像： <b><p style="margin:0px">'+category_list+'</p></b>';
+    document.getElementById('status').innerHTML = '请画出如下类别之一的图像：<b><p style="margin:0;text-align:left;">'+category_list+'</p></b>';
   });
 }
 
@@ -164,16 +164,17 @@ function performPrediction() {
     });
 
     let topK = (indices.length > demoTopK ? demoTopK : indices.length);
-    let predictionText = '';
+    let predictionText = 'AI猜你画的是：<b><p style="margin:0;text-align:left;">';
     for (let i = 0; i < topK; i++) {
       let index = indices[i];
       predictionText += categoryNames[index];
-      predictionText += '<span style="font-size:0.22rem;">(匹配度';
+      predictionText += '<span style="font-size:0.28rem;">(匹配度';
       predictionText += (probabilities[index]*100).toFixed(2);
       predictionText += '%)</span>';
       if (i < demoTopK - 1)
         predictionText += ' > ';
     }
+    predictionText += '</p></b>';
 
     document.getElementById('prediction-result').innerHTML = predictionText;
   }
