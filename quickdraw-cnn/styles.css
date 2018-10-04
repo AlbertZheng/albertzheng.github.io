@@ -43,7 +43,7 @@ header b {
     /* font-weight: 300; */
     text-align: left;
     color: rgba(255, 255, 255, 1);
-    padding: 0 0.18rem;
+    padding: 0 0.1rem;
 }
 
 #description-container #poc-info {
@@ -51,7 +51,7 @@ header b {
 }
 
 #description-container #stack-info {
-    margin: 0.02rem;
+    margin: 0.06rem;
 }
 
 /** Controls. **/
@@ -101,6 +101,7 @@ header b {
 }
 
 .panel-cell #prediction-result {
+    margin: 0;
 }
 
 .panel-row-top .panel-cell-left {
@@ -147,16 +148,16 @@ header b {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 0.24rem;
-    height: 0.24rem;
+    width: 0.25rem;
+    height: 0.25rem;
     border-radius: 50%;
     background: #ef6c00;
     cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-    width: 0.24rem;
-    height: 0.24rem;
+    width: 0.26rem;
+    height: 0.26rem;
     border-radius: 50%;
     background: #ef6c00;
     cursor: pointer;
@@ -167,14 +168,15 @@ header b {
     font-weight: 400;
     text-align: center;
     white-space: nowrap;
-    vertical-align: middle;
+    vertical-align: sub;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     border: 0.01rem solid transparent;
-    font-size: 0.24rem;
+    font-size: 0.32rem;
     line-height: 1.5;
+    border-radius: 0.04rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
