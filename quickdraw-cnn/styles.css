@@ -8,6 +8,7 @@
 body {
     display: flex;
     flex-direction: column;
+    font-size: 0.18rem;
 }
 
 button:focus {
@@ -17,14 +18,14 @@ button:focus {
 /** Page header. **/
 header {
     background-color: #ef6c00;
-    border-bottom: solid 1px rgba(0, 0, 0, 0.4);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-bottom: solid 0.01rem rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0.02rem 0.04rem rgba(0, 0, 0, 0.2);
     color: rgba(255, 255, 255, 0.7);
-    font-size: 30px;
+    font-size: 0.3rem;
     font-weight: 300;
     line-height: 0.8em;
     overflow: hidden;
-    padding: 20px 0;
+    padding: 0.2rem 0;
     position: relative;
     text-align: center;
     -webkit-font-smoothing: antialiased;
@@ -38,18 +39,18 @@ header b {
 
 #description-container {
     background: black;
-    font-size: 16px;
+    font-size: 0.16rem;
     /* font-weight: 300; */
     text-align: left;
     color: rgba(255, 255, 255, 1);
-    padding: 0 18px;
+    padding: 0 0.18rem;
 }
 
 /** Controls. **/
 .controller-panels {
     display: flex;
     flex-direction: row;
-    margin: 9px;
+    margin: 0.09rem;
 }
 
 .panel {
@@ -80,7 +81,7 @@ header b {
 
 
 .drawing-panel {
-    margin-top: 9px;
+    margin-top: 0.09rem;
 }
 
 .panel-cell .help-text {
@@ -89,7 +90,7 @@ header b {
     padding: 0;
     text-align: center;
     /* font-weight: 300; */
-    font-size: 18px;
+    font-size: 0.18rem;
     line-height: 1.1;
     top: 0;
     color: rgba(255, 255, 255, 1);
@@ -106,17 +107,17 @@ header b {
 
 .canvas-box-outer {
     background: white;
-    border: 1px solid #585858;
-    border-radius: 4px;
+    border: 0.01rem solid #585858;
+    border-radius: 0.04rem;
     box-sizing: border-box;
     display: inline-block;
-    padding: 9px;
-    margin: 24px;
+    padding: 0.09rem;
+    margin: 0.24rem;
 }
 
 .canvas-box-inner {
-    border: 1px solid #585858;
-    border-radius: 4px;
+    border: 0.01rem solid #585858;
+    border-radius: 0.04rem;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -125,9 +126,9 @@ header b {
 
 .slider {
     -webkit-appearance: none;
-    width: 230px;
-    height: 1px;
-    border-radius: 3px;
+    width: 2.3rem;
+    height: 0.01rem;
+    border-radius: 0.03rem;
     background: #ef6c00;
     outline: none;
     opacity: 0.9;
@@ -142,16 +143,16 @@ header b {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 25px;
+    width: 0.25rem;
+    height: 0.25rem;
     border-radius: 50%;
     background: #ef6c00;
     cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
+    width: 0.25rem;
+    height: 0.25rem;
     border-radius: 50%;
     background: #ef6c00;
     cursor: pointer;
@@ -167,11 +168,9 @@ header b {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    font-size: 1rem;
+    border: 0.01rem solid transparent;
+    font-size: 0.18rem;
     line-height: 1.5;
-    border-radius: .25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
@@ -187,7 +186,7 @@ header b {
 
 .btn.focus, .btn:focus {
     outline: 0;
-    box-shadow: 0 0 0 .2rem rgba(239, 108, 0, .25)
+    box-shadow: 0 0 0 .112rem rgba(239, 108, 0, .25)
 }
 
 .btn.disabled, .btn:disabled {
@@ -220,7 +219,7 @@ a.btn.disabled, fieldset:disabled a.btn {
 }
 
 .btn-outline-primary.focus, .btn-outline-primary:focus {
-    box-shadow: 0 0 0 .2rem rgba(239, 108, 0, .5)
+    box-shadow: 0 0 0 .112rem rgba(239, 108, 0, .5)
 }
 
 .btn-outline-primary.disabled, .btn-outline-primary:disabled {
@@ -235,14 +234,14 @@ a.btn.disabled, fieldset:disabled a.btn {
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus, .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-outline-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 .2rem rgba(239, 108, 0, .5)
+    box-shadow: 0 0 0 .112rem rgba(239, 108, 0, .5)
 }
 
 /** Footer. **/
 #copyright {
     color: #f8f8f8;
     font-weight: 300;
-    margin: 12px 0;
+    margin: 0.12rem 0;
     text-align: center;
 }
 
