@@ -210,7 +210,7 @@ function performPrediction() {
       let index = indices[i];
       predictionText += categoryNames[index];
       predictionText += '<span style="font-size:0.26rem;">';
-      predictionText += Math.round10(probabilities[index] * 100, -1);
+      predictionText += Math.round10(probabilities[index] * 100, -2);
       predictionText += '%匹配度</span>';
       if (i < demoTopK - 1)
         predictionText += ' > ';
