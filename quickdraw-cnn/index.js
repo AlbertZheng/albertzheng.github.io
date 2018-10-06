@@ -208,10 +208,16 @@ function performPrediction() {
     let predictionText = '';
     for (let i = 0; i < topK; i++) {
       let index = indices[i];
+      let p = Math.round10(probabilities[index] * 100, -2);
       predictionText += categoryNames[index];
       predictionText += '<span style="font-size:0.26rem;">';
-      predictionText += Math.round10(probabilities[index] * 100, -2);
+      predictionText += p;
       predictionText += '%匹配度</span>';
+
+      // If we get the most perfect matching
+      if (p === 100)
+        break;
+
       if (i < demoTopK - 1)
         predictionText += ' > ';
     }
