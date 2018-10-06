@@ -110,9 +110,6 @@ header #header-right {
 
 .panel-cell #prediction-result {
     margin: 0 0.1rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .panel-row-top .panel-cell-left {
