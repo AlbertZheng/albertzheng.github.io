@@ -7,11 +7,12 @@ let demoTopK = 3;
 let demoMiniCategoryNumber = 10;
 
 
+/* Util to adapt to the screen resolution */
 (function (doc, win) {
   var docEl = doc.documentElement,
       isIOS = navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
       dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
-      dpr = window.top === window.self ? dpr : 1, //被iframe引用时，禁止缩放
+      dpr = window.top === window.self ? dpr : 1, // If referred by iframe, disable to scale
       dpr = 1,
       scale = 1 / dpr,
       resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
@@ -25,7 +26,7 @@ let demoMiniCategoryNumber = 10;
     if (width / dpr > 750) {
       width = 750 * dpr;
     }
-    // 乘以100，px : rem = 100 : 1
+    // px:rem = 100:1
     docEl.style.fontSize = 100 * (width / 750) + 'px';
   };
   recalc();
@@ -81,8 +82,9 @@ async function appMain() {
   // Load the category names
   await loadCategories();
 
-  // Now it is enabled to draw on the canvas
-  enableDrawing();
+  // Enable drawing on the canvas
+  $('i').prop('disabled', false);
+  canvas.isDrawingMode = 1;
 }
 
 
@@ -110,20 +112,6 @@ async function loadCategories() {
     }
     document.getElementById('status').innerHTML = '请画出如下类别之一的图像：<b><p style="margin:0;">' + category_list + '</p></b>';
   });
-}
-
-
-/**
- * Enable drawing on canvas
- */
-function enableDrawing() {
-  $('button').prop('disabled', false);
-  let thickness = document.getElementById('brush-thickness');
-  thickness.oninput = function () {
-    canvas.freeDrawingBrush.width = this.value;
-  };
-
-  canvas.isDrawingMode = 1;
 }
 
 
@@ -171,9 +159,9 @@ function performPrediction() {
     for (let i = 0; i < topK; i++) {
       let index = indices[i];
       predictionText += categoryNames[index];
-      predictionText += '<span style="font-size:0.26rem;">(匹配度';
+      predictionText += '<span style="font-size:0.26rem;">';
       predictionText += (probabilities[index] * 100).toFixed(1);
-      predictionText += '%)</span>';
+      predictionText += '%匹配度</span>';
       if (i < demoTopK - 1)
         predictionText += ' > ';
     }
@@ -202,22 +190,22 @@ function getImageData() {
  * Get the border box
  */
 function getBorderBox() {
-  let coordinateX = drawingCoordinates.map(function (pointer) {
+  let coordinateXs = drawingCoordinates.map(function(pointer) {
     return pointer.x
   });
-  let coordinateY = drawingCoordinates.map(function (pointer) {
+  let coordinateYs = drawingCoordinates.map(function(pointer) {
     return pointer.y
   });
 
   // Get the (top, left) and (bottom, right) points.
   let topLeftCoordinate = {
-    x: Math.min.apply(null, coordinateX),
-    y: Math.min.apply(null, coordinateY)
+    x: Math.min(...coordinateXs),
+    y: Math.min(...coordinateYs)
   };
 
   let bottomRightCoordinate = {
-    x: Math.max.apply(null, coordinateX),
-    y: Math.max.apply(null, coordinateY)
+    x: Math.max(...coordinateXs),
+    y: Math.max(...coordinateYs)
   };
 
   return {
@@ -236,8 +224,8 @@ function distort(imageData) {
     let tensor = tf.fromPixels(imageData, numChannels = 1);
 
     // Resize to 28x28 and normalize to 0 (black) and 1 (white)
-    const resizedImage = tf.image.resizeBilinear(tensor, [28, 28]).toFloat();
-    const normalizedImage = tf.ceil(resizedImage.div(tf.scalar(255.0)));
+    let normalizedImage = tf.image.resizeBilinear(tensor, [28, 28]).toFloat();
+    normalizedImage = tf.ceil(normalizedImage.div(tf.scalar(255.0)));
 
     // Add a dimension to get a batch shape so that the shape will become (1, h, w, 1)
     return normalizedImage.expandDims(0);

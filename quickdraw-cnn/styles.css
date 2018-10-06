@@ -29,6 +29,12 @@ header {
     position: relative;
     text-align: center;
     -webkit-font-smoothing: antialiased;
+
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    align-items: center;
+    justify-content: space-around;
 }
 
 header b {
@@ -36,11 +42,17 @@ header b {
     font-weight: 400;
 }
 
+header #header-left {
+}
+
+header #header-middle {
+}
+
+header #header-right {
+}
 
 #description-container {
     background: black;
-    /* font-size: 0.16rem; */
-    /* font-weight: 300; */
     text-align: left;
     color: rgba(255, 255, 255, 1);
     padding: 0 0.1rem;
@@ -67,6 +79,7 @@ header b {
     flex-direction: column;
     flex-grow: 1;
     /* flex-shrink: 0; */
+    margin-top: 0.09rem;
 }
 
 .panel-row {
@@ -87,11 +100,6 @@ header b {
     flex-grow: 1;
 }
 
-
-.drawing-panel {
-    margin-top: 0.09rem;
-}
-
 .panel-cell .help-text {
     color: #f8f8f8;
     margin-top: -0.14rem;
@@ -101,7 +109,7 @@ header b {
 }
 
 .panel-cell #prediction-result {
-    margin: 0;
+    margin: 0.1rem;
 }
 
 .panel-row-top .panel-cell-left {
@@ -129,125 +137,22 @@ header b {
     overflow: hidden;
 }
 
-.slider {
-    -webkit-appearance: none;
-    width: 2.3rem;
-    height: 0.01rem;
-    border-radius: 0.03rem;
-    background: #ef6c00;
-    outline: none;
-    opacity: 0.9;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+
+@font-face {font-family: "iconfont";
+  src: url('font/iconfont.eot?t=1538801601231'); /* IE9*/
+  src: url('font/iconfont.eot?t=1538801601231#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAASEAAsAAAAABsAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFY9MEitY21hcAAAAYAAAABLAAABcOfit9hnbHlmAAABzAAAAMwAAADMqwL81mhlYWQAAAKYAAAAMQAAADYSzwV/aGhlYQAAAswAAAAgAAAAJAfRA4RobXR4AAAC7AAAAAgAAAAICAH/8mxvY2EAAAL0AAAABgAAAAYAZgAAbWF4cAAAAvwAAAAgAAAAIAEVAENuYW1lAAADHAAAAUUAAAJtPlT+fXBvc3QAAARkAAAAHwAAADDL9WJ7eJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkYWScwMDKwMHUyXSGgYGhH0IzvmYwYuRgYGBiYGVmwAoC0lxTGBye7Xq2i7nhfwNDDHMDQwNQmBEkBwD6iA1YeJxjYGBgZWBgYAZiHSBmYWBgDGFgZAABP6AoI1icmYELLM7CoARWwwISf7br/38YCeSzgEkGRjaGUcADJmWgPHBYQTADIwDvzQxRAAAJ//L/tgQBA0oABQAJAA0AFgAdACQAKwA1ADYAAAkBESEBNQE3IQclBTUlATcGJjcnBgIXBxQ2NyYGBxcWNjcHBgcXMiYnBhYXNSIGFxY2JwYmJzECN/6JAckBd/07/AFP/QFP/toBJvySKQxwKikLGndSP0AJZRF7BEIMKCQG/QIZOwkFVgwLlZ1hBY7jBgNJ/tv+2gFP/P7e0NAp+af5/eIpBlukKQ3+/Tt/AxJDCQRXeggVcSMgOylSVQqBHNApKR9nCigiBgAAAHicY2BkYGAA4v/e32Xi+W2+MnCzMIDA9XsJB2H0/0//t7EwMnsBuRwMTCBRAHnUDbwAAAB4nGNgZGBgbvjfwBDDwvj/EwMDCyMDUAQFMAEAdNoEXgQAAAAEAf/yAAAAAABmAAAAAQAAAAIANwAJAAAAAAACAAAACgAKAAAA/wAAAAAAAHicZY9NTsMwEIVf+gekEqqoYIfkBWIBKP0Rq25YVGr3XXTfpk6bKokjx63UA3AejsAJOALcgDvwSCebNpbH37x5Y08A3OAHHo7fLfeRPVwyO3INF7gXrlN/EG6QX4SbaONVuEX9TdjHM6bCbXRheYPXuGL2hHdhDx18CNdwjU/hOvUv4Qb5W7iJO/wKt9Dx6sI+5l5XuI1HL/bHVi+cXqnlQcWhySKTOb+CmV7vkoWt0uqca1vEJlODoF9JU51pW91T7NdD5yIVWZOqCas6SYzKrdnq0AUb5/JRrxeJHoQm5Vhj/rbGAo5xBYUlDowxQhhkiMro6DtVZvSvsUPCXntWPc3ndFsU1P9zhQEC9M9cU7qy0nk6T4E9XxtSdXQrbsuelDSRXs1JErJCXta2VELqATZlV44RelzRiT8oZ0j/AAlabsgAAAB4nGNgYoAALgbsgImRiZGZgS21KLE4tYiBAQAQcgKeAA==') format('woff'),
+  url('font/iconfont.ttf?t=1538801601231') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('font/iconfont.svg?t=1538801601231#iconfont') format('svg'); /* iOS 4.1- */
 }
 
-.slider:hover {
-    opacity: 1;
+.iconfont {
+    color: #ffffff;
+    font-family:"iconfont" !important;
+    font-size:0.3rem;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 0.25rem;
-    height: 0.25rem;
-    border-radius: 50%;
-    background: #ef6c00;
-    cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-    width: 0.26rem;
-    height: 0.26rem;
-    border-radius: 50%;
-    background: #ef6c00;
-    cursor: pointer;
-}
-
-.btn {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: sub;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 0.01rem solid transparent;
-    font-size: 0.32rem;
-    line-height: 1.5;
-    border-radius: 0.04rem;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-    .btn {
-        transition: none
-    }
-}
-
-.btn:focus, .btn:hover {
-    text-decoration: none
-}
-
-.btn.focus, .btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 .112rem rgba(239, 108, 0, .25)
-}
-
-.btn.disabled, .btn:disabled {
-    opacity: .65
-}
-
-.btn:not(:disabled):not(.disabled) {
-    cursor: pointer
-}
-
-.btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active {
-    background-image: none
-}
-
-a.btn.disabled, fieldset:disabled a.btn {
-    pointer-events: none
-}
-
-.btn-outline-primary {
-    color: #ef6c00;
-    background-color: transparent;
-    background-image: none;
-    border-color: #ef6c00
-}
-
-.btn-outline-primary:hover {
-    color: #fff;
-    background-color: #ef6c00;
-    border-color: #ef6c00
-}
-
-.btn-outline-primary.focus, .btn-outline-primary:focus {
-    box-shadow: 0 0 0 .112rem rgba(239, 108, 0, .5)
-}
-
-.btn-outline-primary.disabled, .btn-outline-primary:disabled {
-    color: #ef6c00;
-    background-color: transparent
-}
-
-.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show > .btn-outline-primary.dropdown-toggle {
-    color: #fff;
-    background-color: #ef6c00;
-    border-color: #ef6c00
-}
-
-.btn-outline-primary:not(:disabled):not(.disabled).active:focus, .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-outline-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 .112rem rgba(239, 108, 0, .5)
-}
-
-/** Footer. **/
-#copyright {
-    color: #f8f8f8;
-    font-weight: 300;
-    margin: 0.12rem 0;
-    text-align: center;
-}
-
+.icon-eraser:before { content: "\e6ba"; }
