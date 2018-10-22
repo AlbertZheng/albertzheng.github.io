@@ -193,7 +193,21 @@ function performPrediction() {
     console.log("Probabilities: ", probabilities);
 
     //let tmp = [];
-    //for (let ii=0; ii<probabilities.length; ii++)="" {="" tmp.push(probabilities[ii]);="" }="" map="" the="" probabilities="" to="" indices="" const="" (a,="" b)="" return="" b="" -="" a="" }).map(function="" (probability)="" for="" (let="" i="0;" <="" probabilities.length;="" i++)="" if="" (probability="==" probabilities[i])="" i;="" });="" let="" topk="(indices.length"> demoTopK ? demoTopK : indices.length);
+    //for (let ii=0; ii<probabilities.length; ii++) { tmp.push(probabilities[ii]); }
+
+    // Map the probabilities to indices
+    const indices = probabilities.slice(0).sort(function (a, b) {
+    //const indices = tmp.sort(function (a, b) {
+      return b - a
+    }).map(function (probability) {
+      for (let i = 0; i < probabilities.length; i++) {
+        if (probability === probabilities[i]) {
+          return i;
+        }
+      }
+    });
+
+    let topK = (indices.length > demoTopK ? demoTopK : indices.length);
     let predictionText = '';
     for (let i = 0; i < topK; i++) {
       let index = indices[i];
@@ -279,4 +293,3 @@ function distort(imageData) {
     return normalizedImage.expandDims(0);
   })
 }
-</probabilities.length;>
